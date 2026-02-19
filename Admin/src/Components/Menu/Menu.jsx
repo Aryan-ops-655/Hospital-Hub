@@ -14,7 +14,7 @@ const Menu = () => {
                         </div>
                         <div className="details">
                             <p className="name">{Item.name}</p>
-                            <p className="units"><span style={{color :Item.col , borderColor:Item.col}} >{Item.units}</span> Units</p>
+                            <p className="units"><span style={{color:Item.col , borderColor:Item.col }} >{Item.units}</span> Units</p>
                         </div>
                     </div>
                 )

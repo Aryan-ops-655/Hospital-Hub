@@ -22,10 +22,9 @@
 }
 
 .card{
+    cursor: pointer;
     padding: 10px;
     display: flex;
-    border: 2px solid red;
-    background-color: rgb(255, 192, 214);
     border-radius: 8px;
     width: 90%;
     gap: 10px;
@@ -47,3 +46,4 @@
 .color{
     background-color: rgb(255, 245, 105);
 }
+

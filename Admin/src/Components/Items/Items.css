@@ -14,6 +14,7 @@
     grid-template-columns: repeat(6 , 1fr);
     justify-content: space-between;
     align-items: center;
+    font-weight: 600;
     background-color: rgb(204, 225, 243);
 }
 
@@ -35,6 +36,21 @@
 
 .image img{
     width: 30px;
+}
+
+.btns{
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+}
+
+.btns button{
+    padding: 2px 13px;
+    background-color: rgb(199, 219, 255);
+    border: none;
+    color: rgb(0, 96, 212);
+    font-weight: 600;
+    border-radius: 5px;
 }
 
 

@@ -43,7 +43,7 @@ export const Stock = [
     {
         _id: '1',
         col: "rgb(255, 0, 0)",
-        colo: "rgb(239, 145, 145)",
+        colo: "rgb(255, 192, 214)",
         image: blood_drop,
         name: "RBC Units",
         component: "Packed RBC",
@@ -55,6 +55,7 @@ export const Stock = [
     {
         _id:'2',
         col: "rgb(159, 144, 3)",
+        colo: "rgb(255, 248, 187)",
         image: platelet,
         name: "Platelets",
         component: "Platelets",
@@ -66,6 +67,7 @@ export const Stock = [
     {
         _id:'3',
         col: "rgb(3, 50, 89)",
+        colo: "rgb(183, 220, 250)",
         image: plasma,
         name: "Plasma",
         component: "Plasma",
@@ -77,6 +79,7 @@ export const Stock = [
     {
         _id:'4',
         col: "rgb(79, 10, 122)",
+        colo: "rgb(228, 191, 251)",
         image: cryo,
         name: "Cryo",
         component: "Cryoprecipitate",
@@ -90,8 +93,6 @@ export const Stock = [
 export const items = [
     {
         _id: '1',
-        col: "rgb(255, 0, 0)",
-        colo: "rgb(239, 145, 145)",
         image: blood_drop,
         name: "RBC Units",
         component: "Packed RBC",
@@ -102,7 +103,6 @@ export const items = [
     },
     {
         _id:'2',
-        col: "rgb(159, 144, 3)",
         image: platelet,
         name: "Platelets",
         component: "Platelets",
@@ -113,7 +113,6 @@ export const items = [
     },
     {
         _id:'3',
-        col: "rgb(3, 50, 89)",
         image: plasma,
         name: "Plasma",
         component: "Plasma",
@@ -124,7 +123,6 @@ export const items = [
     },
     {
         _id:'4',
-        col: "rgb(79, 10, 122)",
         image: cryo,
         name: "Cryo",
         component: "Cryoprecipitate",
