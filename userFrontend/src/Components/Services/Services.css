@@ -1,0 +1,156 @@
+.services-container {
+  background: #dfe6ef;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+
+.upperCard {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: stretch;
+}
+
+
+.emergencyCard {
+  flex: 1.3;
+  border-radius: 14px;
+  background: red;
+  height: 85px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  transition: 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo-text {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.text .p1 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.text p {
+  margin: 0;
+  color: white;
+  font-size: 13px;
+}
+
+.services-container img {
+  width: 35px;
+}
+
+
+
+.serviceCard {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.serviceCard .cards {
+  padding: 14px 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.serviceCard .cards:hover {
+  transform: translateY(-4px);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.cards p {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2f3a4a;
+}
+
+
+
+.lowerCard {
+  background: linear-gradient(to right, #3c6cb4, #244f8f);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: white;
+  transition: 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+a{
+ text-decoration: none; 
+}
+
+@media (max-width: 900px) {
+
+  .upperCard {
+    flex-direction: column;
+  }
+
+  .serviceCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .emergencyCard {
+    height: auto;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .services-container {
+    padding: 15px;
+  }
+
+  .serviceCard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .cards p {
+    font-size: 13px;
+  }
+
+  .text .p1 {
+    font-size: 16px;
+  }
+
+  .text p {
+    font-size: 12px;
+  }
+
+  .lowerCard {
+    padding: 14px;
+  }
+
+  .services-container img {
+    width: 26px;
+  }
+}

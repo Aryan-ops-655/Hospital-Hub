@@ -1,0 +1,73 @@
+.image img{
+    width: 50px;
+}
+
+.image{
+    background-color: grey;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.hos-card{
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-left: 4px solid #3e6cad;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.hospital-details{
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    align-items: center;
+    justify-content: start;
+
+}
+
+.details{
+    display: grid;
+    gap: 2px;
+}
+
+.details .name{
+    font-size: 18px;
+    font-weight: 550;
+}
+
+
+.service-available{
+    display: grid;
+    width: 60%;
+    gap: 4px;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: end;
+}
+
+.btn{
+    font-size: 15px;
+    padding: 7px;
+    display: flex;
+    background-color: #669dea;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px ;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+}
+
+.hos-card:hover{
+    transform: translateY(0px);
+    border-left: 4px solid grey;
+    
+}

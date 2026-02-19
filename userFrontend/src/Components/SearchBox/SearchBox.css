@@ -1,0 +1,64 @@
+.header-container {
+  padding: 20px 28px;
+  background: #dfe6ef;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.welcome {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #2a2a2a;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  color: #4d5c6d;
+  font-size: 15px;
+}
+
+.loc-icon {
+  font-size: 16px;
+  color: #3a6bb8;
+}
+
+.change {
+  color: #3a6bb8;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.change:hover {
+  text-decoration: underline;
+}
+
+.search-box {
+  margin-top: 18px;
+  background: white;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.search-icon {
+  color: #7a8ca3;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #9aa8b6;
+}

@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+}
+
+.header p{
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.header span{
+    color: red;
+}
+
+.blood-selector{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding:1px 20px ;
+}
+
+.blood-selector p{
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.menu{
+    display: flex;
+    gap: 20px;
+    
+}
+
+.group{
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: whitesmoke;
+    height: 80px;
+    width: 80px;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 32px;
+    display: flex;
+    align-items: center; 
+    transition: 0.1s;
+    box-shadow: 1px  1px 3px grey;  
+}
+
+.group:hover{
+    box-shadow: none;
+    border: 3px solid grey;
+}
+
+@media (max-width:860px){
+    .menu{
+        overflow: scroll;
+        scrollbar-width: none;
+        padding: 5px;
+    }
+
+}
+
+
+
+@media (max-width:480px){
+    .header{
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+}
+
+.header p{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+}
+.menu{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+.group{
+    background-color: whitesmoke;
+    height: 70px;
+    width: 70px;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 28px; 
+}
+}
+

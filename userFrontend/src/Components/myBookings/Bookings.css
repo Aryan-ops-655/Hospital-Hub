@@ -1,0 +1,85 @@
+.container{
+    background: #dfe6ef;
+    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.header p{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.booking-list-item img{
+    width: 50px;
+}
+
+.booking-list-item{
+    padding: 8px 10px;
+    border-radius: 12px;
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);    
+}
+
+.items{
+    display: flex;
+    gap: 14px;
+}
+
+.bookedCards{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.text-content{
+    display: grid;
+    align-items: center;
+}
+
+.text-content p{
+    font-size: 12px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    gap: 8px;
+}
+
+.details button{
+    color: white;
+    border: none;
+    background-color: #244f8f;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.details p{
+    font-size: 12px;
+}
+
+.details button:hover{
+    transform: translateY(-4px);
+}
+
+
+@media (max-width: 900px) {
+    .bookedCards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

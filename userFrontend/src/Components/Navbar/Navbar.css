@@ -1,0 +1,62 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  background: linear-gradient(to right, #2c5f9e, #3b6fb6);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.welcome-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar-right img {
+  filter: invert(95%);
+  width: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-right img:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+.logbtn{
+  padding: 3px 8px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+.menu-icon {
+  font-size: 22px;
+}
+
+.profile-icon {
+  font-size: 24px;
+}
+
+
+@media (max-width:480px) {
+  .menu-list{
+    display:none
+  }
+  
+}
