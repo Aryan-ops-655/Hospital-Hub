@@ -35,8 +35,9 @@ user_icon,
 platelet,
 cryo,
 medical,
-plasma,
+plasma
 }
+
 
 
 export const Stock = [
@@ -90,13 +91,13 @@ export const Stock = [
     }   
 ]
 
-export const items = [
+export const items_list = [
     {
         _id: '1',
         image: blood_drop,
         name: "RBC Units",
         component: "Packed RBC",
-        bloodGroup: "A+",
+        group: "A+",
         units: 15,
         expiry: "25 Feb 2026",
         status: "In Stock"
@@ -106,7 +107,7 @@ export const items = [
         image: platelet,
         name: "Platelets",
         component: "Platelets",
-        bloodGroup: "O+",
+        group: "O+",
         units: 4,
         expiry: "20 Feb 2026",
         status: "Low Stock"
@@ -116,7 +117,7 @@ export const items = [
         image: plasma,
         name: "Plasma",
         component: "Plasma",
-        bloodGroup: "B-",
+        group: "B-",
         units: 8,
         expiry: "10 Dec 2026",
         status: "Safe"
@@ -126,7 +127,7 @@ export const items = [
         image: cryo,
         name: "Cryo",
         component: "Cryoprecipitate",
-        bloodGroup: "AB-",
+        group: "AB-",
         units: 2,
         expiry: "15 Feb 2026",
         status: "Expiring Soon"

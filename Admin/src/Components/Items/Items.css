@@ -1,58 +1,41 @@
 .container{
-    padding: 20px;
+    padding: 5px 20px;
     background-color: whitesmoke;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-.header{
-    padding: 5px;
-    border-radius: 5px 5px 0 0;
-    flex: 1;
+.items{
     display: grid;
-    grid-template-columns: repeat(6 , 1fr);
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    background-color: rgb(204, 225, 243);
-}
-
-.item{
-    background-color: white;
-    padding: 5px ;
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(6 , 1fr);
-    justify-content: space-between;
-    border: 1px solid gainsboro;
     box-sizing: border-box;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 8px 8px;
+    background-color: white;
+    border-bottom: 1px solid rgb(208, 207, 207);
 }
 
-.image{
-    display: flex;
-    align-items: center;
-}
-
-.image img{
-    width: 30px;
-}
 
 .btns{
     display: flex;
-    justify-content: left;
-    gap: 8px;
+    gap: 5px;
 }
 
 .btns button{
-    padding: 2px 13px;
-    background-color: rgb(199, 219, 255);
+    padding: 3px 7px;
     border: none;
-    color: rgb(0, 96, 212);
-    font-weight: 600;
     border-radius: 5px;
+    font-weight: 500;
+    color: rgb(73, 73, 133);
+    background-color: rgb(229, 239, 249);
 }
 
+.component{
+    display: flex;
+}
 
+.component img{
+    width: 30px;
+}
 
 

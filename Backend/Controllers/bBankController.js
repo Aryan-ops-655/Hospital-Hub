@@ -28,4 +28,32 @@ const addBlood = async(req , res) => {
 }
 
 
-export {addBlood}
+//get blood
+const listBlood = async (req , res) => {
+    try {
+        const blood = await BloodBank.find({});
+        res.json({success:true,data:blood})
+    } catch (error) {
+        res.json({success:false, message:error})
+    }
+}
+
+
+//delete item
+const deleteBlood = async(req,res) => {
+    try {
+        const blood = await BloodBank.findById(req.body.id);
+        await BloodBank.findByIdAndDelete(req.body.id);
+        res.json({
+            success:true,
+            message:"Deleted..."
+        })
+    } catch (error) {
+        res.json({
+            success:false,
+            message:"Error..."
+        })
+    }
+}
+
+export {addBlood,listBlood,deleteBlood}
