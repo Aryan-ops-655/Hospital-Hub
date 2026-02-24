@@ -4,7 +4,7 @@ const bloodBankSchema = new Schema(
     {
         component: String,
         blood_group: String,
-        units: String,
+        units: Number,
         stock_status: String, 
         donated_date: Date,
         expiry_date: Date,

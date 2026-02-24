@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
-    const [user, setUser] = useState("Aryan");
+    const [order, setOrder] = useState('');
 
 
 
@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="nav-right">
         <div className="stock-details">
           <Link to='/add'><button className="add">Add New Stock</button></Link>
-          <button>Manage Expiry</button>
+          <Link to='/order'><button className="order">Orders {order}</button></Link>
         </div>
         <hr />
         <div className="user-details">

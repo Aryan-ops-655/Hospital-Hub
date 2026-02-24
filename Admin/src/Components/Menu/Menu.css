@@ -43,7 +43,34 @@
     width: 50px;
 }
 
-.color{
-    background-color: rgb(255, 245, 105);
+.wb{
+    border: 2px solid red;
+    background-color:rgb(255, 192, 214) ;
+}
+.wb span{
+    color: red;
 }
 
+.pl{
+    border: 2px solid rgb(159, 144, 3);
+    background-color: rgb(255, 248, 187);
+}
+.pl span{
+    color: rgb(159, 144, 3);
+}
+
+.p{
+    border: 2px solid rgb(3, 50, 89);
+    background-color: rgb(183, 220, 250) ;
+}
+.p span{
+    color: rgb(3, 50, 89);
+}
+
+.cy{
+    border: 2px solid rgb(79, 10, 122);
+    background-color:rgb(228, 191, 251) ;
+}
+.cy span{
+    color: rgb(79, 10, 122);
+}

@@ -7,6 +7,7 @@
     grid-template-columns: repeat(6, 1fr);
     background-color: white;
     border-radius: 5px 5px 0px 0px;
+    font-weight: 600;
     padding: 10px;
     background-color: rgb(189, 228, 250);
 }

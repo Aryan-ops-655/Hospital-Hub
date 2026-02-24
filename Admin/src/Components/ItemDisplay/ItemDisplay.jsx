@@ -30,7 +30,7 @@ const ItemDisplay = ({ group, component }) => {
 
   useEffect(()=>{
     fetch_list();
-  },[filteredItems])
+  },[])
 
   return (
     <div className='container'>
