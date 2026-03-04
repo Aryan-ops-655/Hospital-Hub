@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './ItemDisplay.css'
 import Item from '../Items/Items'
-import { BACKEND_URL } from "../../../constant";
-import axios from 'axios';
+import { AdminContext } from '../../Context/adminContext';
 
 
-const ItemDisplay = ({ group, component }) => {
+const ItemDisplay = ({ find, setFind, group, component, setShowUpdateForm }) => {
 
-
-  const [items_list, setitem_list] = useState([]);
+  const { fetch_list, items_list } = useContext(AdminContext)
+  
 
 
   // filter logic
@@ -18,14 +17,7 @@ const ItemDisplay = ({ group, component }) => {
   );
 
 
-  const fetch_list = async () => {
-    const response = await axios.get(`${BACKEND_URL}/api/bBank/blood`);
-    if(response.data.success){
-      setitem_list(response.data.data)
-    }else{
-      alert(error);
-    }
-  };
+  
 
 
   useEffect(()=>{
@@ -49,6 +41,7 @@ const ItemDisplay = ({ group, component }) => {
         {filteredItems.length > 0 ? (
           filteredItems.map(item => (
             <Item
+              setShowUpdateForm={setShowUpdateForm}
               key={item._id}
               id={item._id}
               component={item.component}

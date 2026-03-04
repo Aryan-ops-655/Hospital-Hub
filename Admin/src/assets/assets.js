@@ -38,3 +38,30 @@ medical,
 plasma
 }
 
+
+export const bBankOrderList = [
+    {
+        _id:"1",
+        order_id:"699dbf820f004d3dc760b4e6",
+        order_units: 2,
+        order_status:"pending"
+    },
+    {
+        _id:"2",
+        order_id:"699dbf820f004d3dc760b4e6",
+        order_units: 2,
+        order_status:"approved"
+    },
+    {
+        _id:"3",
+        order_id:"699dbf830f004d3dc760b4e8",
+        order_units: 2,
+        order_status:"cancled"
+    },
+    {
+        _id:"4",
+        order_id:"699dbfa80f004d3dc760b4f6",
+        order_units: 2,
+        order_status:"rejected"
+    },
+]

@@ -42,7 +42,6 @@ const listBlood = async (req, res) => {
 //delete item
 const deleteBlood = async (req, res) => {
     try {
-        const blood = await BloodBank.findById(req.body.id);
         await BloodBank.findByIdAndDelete(req.body.id);
         res.json({
             success: true,
@@ -94,4 +93,46 @@ const totalUnits = async (req, res) => {
     }
 }
 
-export { addBlood, listBlood, deleteBlood, totalUnits }
+
+
+//update blood bank data
+const findId = async (req, res) => {
+    try {
+        const blood = await BloodBank.findById(req.body.id);
+        res.json({
+            success: true,
+            data:blood
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            message: "Error"
+        })
+    }
+
+}
+
+
+const findandUpdate = async (req, res) => {
+    try {
+        const blood = await BloodBank.findByIdAndUpdate(req.body.id,{
+        component: req.body.component,
+        blood_group: req.body.group,
+        units: req.body.units,
+        stock_status: req.body.status,
+        donated_date: req.body.collected,
+        expiry_date: req.body.expiry,
+        });
+        res.json({
+            success: true,
+            message:"updated"
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            message: "Error"
+        })
+    }
+
+}
+export { addBlood, listBlood, deleteBlood, totalUnits, findId, findandUpdate }

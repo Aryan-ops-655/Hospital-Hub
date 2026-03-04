@@ -1,34 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Menu.css'
 import { assets } from '../../assets/assets.js'
 import axios from 'axios';
 import { BACKEND_URL } from '../../../constant.js';
+import { AdminContext } from '../../Context/adminContext.jsx';
 
 const Menu = () => {
 
-    const [wbno, setwbno] = useState(0)
-    const [plno, setplno] = useState(0)
-    const [cyno, setcyno] = useState(0)
-    const [pno, setpno] = useState(0)
+    const {fetch_totalUnits, wbno, pno, cyno, plno} = useContext(AdminContext)
 
-    const fetch_totalUnits = async () => {
-        const response = await axios.get(`${BACKEND_URL}/api/bBank/totalUnits`);
-        if (response.data.success) {
-            for (let i in response.data.data[0]) {
-                if (i === "Whole Blood") {
-                    setwbno(response.data.data[0][i])
-                }else if (i === "Plasma") {
-                    setplno(response.data.data[0][i])
-                }else if (i === "Platelets") {
-                    setpno(response.data.data[0][i])
-                }else if (i === "Cryoprecipitate") {
-                    setcyno(response.data.data[0][i])
-                }
-            }
-        } else {
-            alert(error);
-        }
-    };
+    
 
     useEffect(() => {
         fetch_totalUnits();
