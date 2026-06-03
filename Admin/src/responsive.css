@@ -1,0 +1,447 @@
+/* Global Responsive Styles for Hospital Admin Panel */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #667eea;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #34495e;
+    --white: #ffffff;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Typography - Responsive */
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.6;
+}
+
+/* Button Styles */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Form Elements */
+input, select, textarea {
+    font-family: inherit;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+/* Card Component */
+.card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Flex Utilities */
+.flex {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Badges & Status */
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-success {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--success);
+}
+
+.badge-danger {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--danger);
+}
+
+.badge-warning {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: var(--warning);
+}
+
+.badge-info {
+    background-color: rgba(102, 126, 234, 0.1);
+    color: var(--secondary);
+}
+
+/* Spacing Utilities */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.p-10 { padding: 10px; }
+.p-20 { padding: 20px; }
+.p-30 { padding: 30px; }
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: #7f8c8d; }
+.text-bold { font-weight: 600; }
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.text-warning { color: var(--warning); }
+
+/* Loading */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.spinner {
+    border: 4px solid var(--light);
+    border-top: 4px solid var(--secondary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    h2 {
+        font-size: clamp(1.1rem, 3vw, 1.75rem);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .flex-between {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .flex-center {
+        flex-direction: column;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+
+    input, select, textarea {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .grid, .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    input, select, textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .flex, .flex-between, .flex-center {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mt-20, .mb-20 {
+        margin: 15px 0;
+    }
+
+    .p-20, .p-30 {
+        padding: 15px;
+    }
+}
+
+/* Dashboard Responsive */
+@media (max-width: 768px) {
+    [style*="display: flex;"][style*="marginLeft"] {
+        margin-left: 0 !important;
+    }
+
+    [style*="width: 250px;"][style*="position: fixed"] {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    [style*="width: 250px;"][style*="position: fixed"] {
+        position: fixed;
+        left: -250px;
+        transition: left 0.3s ease;
+        z-index: 100;
+    }
+
+    [style*="marginLeft: 250px;"] {
+        margin-left: 0;
+    }
+}
+
+/* Print Styles */
+@media print {
+    button, input[type="submit"], input[type="button"] {
+        display: none;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark Mode (if needed) */
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .card {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    input, select, textarea {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+}
