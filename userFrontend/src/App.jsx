@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home.jsx'
 import { Route, Routes } from 'react-router-dom'
 import Blood from './Pages/Blood/Blood.jsx'
 import Beds from './Pages/Beds/Beds.jsx'
+import Login from './Pages/Login/Login.jsx'
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
         <Route path='/beds' element={<Beds/>} />
         <Route path='/oxygen' element={<Beds/>} />
         <Route path='/hospitals' element={<Beds/>} />
+        <Route path='/login' element={<Login/>} />
       </Routes>
     </>
   )

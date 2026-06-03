@@ -1,28 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./SearchBox.css";
 import { FiMapPin, FiSearch } from "react-icons/fi";
-import { useLocation } from "../Location/Location"; 
+import { UserContext } from "../../Context/UserContext";
 
 const SearchBox = () => {
-  const user = "Aryan";
+  const { user, locationName, loading, detectUserLocation, searchQuery, setSearchQuery, performSearch } = useContext(UserContext);
 
-  const { location, loading, error, getLocation } = useLocation();
-
-  useEffect(() => {
-    getLocation();
-  }, []);
+  const handleSearchChange = (e) => {
+    const val = e.target.value;
+    setSearchQuery(val);
+    performSearch(val);
+  };
 
   return (
     <div className="header-container">
-      <h1 className="welcome">Welcome, {user}</h1>
+      <h1 className="welcome">Welcome, {user ? user.name : "Guest"}</h1>
 
       <div className="location-row">
         <FiMapPin className="loc-icon" />
 
         <span className="location-text">
-          {loading ? "Detecting location..." : location || error}
+          {loading ? "Detecting location..." : locationName}
           
-          <span onClick={getLocation} className="change">(Change ›)</span>
+          <span onClick={detectUserLocation} className="change" style={{ cursor: "pointer" }}>(Change ›)</span>
         </span>
       </div>
 
@@ -30,6 +30,8 @@ const SearchBox = () => {
         <FiSearch className="search-icon" />
         <input
           type="text"
+          value={searchQuery}
+          onChange={handleSearchChange}
           placeholder="Search city, hospital, blood group, bed..."
         />
       </div>

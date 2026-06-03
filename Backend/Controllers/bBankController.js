@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { BloodBank } from '../Models/bBankModel.js';
 
 
@@ -5,6 +6,7 @@ import { BloodBank } from '../Models/bBankModel.js';
 //Add blood
 const addBlood = async (req, res) => {
     const blood = new BloodBank({
+        hospitalId: req.body.hospitalId,
         component: req.body.component,
         blood_group: req.body.group,
         units: req.body.units,
@@ -31,7 +33,7 @@ const addBlood = async (req, res) => {
 //get blood
 const listBlood = async (req, res) => {
     try {
-        const blood = await BloodBank.find({});
+        const blood = await BloodBank.find({ hospitalId: req.body.hospitalId });
         res.json({ success: true, data: blood })
     } catch (error) {
         res.json({ success: false, message: error })
@@ -62,6 +64,9 @@ const totalUnits = async (req, res) => {
         res.json({
             success: true,
             data: await BloodBank.aggregate([
+                {
+                    $match: { hospitalId: new mongoose.Types.ObjectId(req.body.hospitalId) }
+                },
                 {
                     $group: {
                         _id: "$component",

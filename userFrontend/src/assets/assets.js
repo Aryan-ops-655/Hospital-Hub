@@ -211,3 +211,20 @@ export const hospital_list = [
         oxygen:8
     }
 ]
+
+
+
+
+
+
+
+export const hospitals = [
+    {
+        _id : '1',
+        name: "AIIMS Hospital",
+        address:"AIIMS Deoghar, Devipur, Deoghar, Jharkhand - 814152",
+        mobno:'8603989073',
+        
+
+    }
+]

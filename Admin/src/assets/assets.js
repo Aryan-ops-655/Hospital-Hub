@@ -42,13 +42,13 @@ plasma
 export const bBankOrderList = [
     {
         _id:"1",
-        order_id:"699dbf820f004d3dc760b4e6",
+        order_id:"69a6cce44c4818a4a896a450",
         order_units: 2,
         order_status:"pending"
     },
     {
         _id:"2",
-        order_id:"699dbf820f004d3dc760b4e6",
+        order_id:"69a6cce44c4818a4a896a450",
         order_units: 2,
         order_status:"approved"
     },
@@ -63,5 +63,5 @@ export const bBankOrderList = [
         order_id:"699dbfa80f004d3dc760b4f6",
         order_units: 2,
         order_status:"rejected"
-    },
+    }
 ]

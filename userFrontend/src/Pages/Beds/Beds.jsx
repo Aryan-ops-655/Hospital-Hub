@@ -1,27 +1,23 @@
-import React,{ useEffect } from 'react'
-import { useLocation } from '../../Components/Location/Location.js'
+import React, { useEffect, useContext } from 'react';
+import { UserContext } from '../../Context/UserContext';
 import Searchitem from '../../Components/Searchitem/Searchitem.jsx';
 
 const Beds = () => {
-
-    const { location, loading, error, getLocation } = useLocation();
-    
-    useEffect(() => {
-        getLocation();
-    }, []);
-
-
+  const { locationName, loading, setSearchType, performSearch, searchQuery } = useContext(UserContext);
+  
+  useEffect(() => {
+    setSearchType("bed");
+  }, []);
 
   return (
     <div>
         <div className="header">
-            <p>Searching Hospitals for: <span>{loading ? "Detecting location..." : location || error}</span>.</p>
+            <p>Searching Beds for: <span>{loading ? "Detecting location..." : locationName}</span>.</p>
         </div>
         <hr></hr>
         <Searchitem/>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Beds
+export default Beds;

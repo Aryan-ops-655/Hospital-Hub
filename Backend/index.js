@@ -3,6 +3,11 @@ import express from "express";
 import cors from 'cors'
 import connectDB from "./Database/db.js";
 import bloodBankRouter from './Routes/bBankRoute.js';
+import locationRouter from './Routes/locationRouter.js';
+import hospitalRouter from './Routes/hospitalRoute.js';
+import serviceRouter from './Routes/serviceRoute.js';
+import requestRouter from './Routes/requestRoute.js';
+import userRouter from './Routes/userRoute.js';
 
 const port = process.env.PORT || 5000;
 
@@ -20,7 +25,11 @@ connectDB();
 
 //api endpoints
 app.use("/api/bBank",bloodBankRouter)
-
+app.use("/api/location",locationRouter)
+app.use("/api/hospital", hospitalRouter)
+app.use("/api/service", serviceRouter)
+app.use("/api/request", requestRouter)
+app.use("/api/user", userRouter)
 
 
 app.get("/",(req, res) =>{

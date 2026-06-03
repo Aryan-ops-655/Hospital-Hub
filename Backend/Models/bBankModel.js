@@ -2,6 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const bloodBankSchema = new Schema(
     {
+        hospitalId: { type: mongoose.Schema.Types.ObjectId, ref: "Hospital", required: true },
         component: String,
         blood_group: String,
         units: Number,
