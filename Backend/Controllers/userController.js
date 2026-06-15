@@ -8,7 +8,7 @@ const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 };
 
-// Login User
+// Login User 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -25,12 +25,14 @@ const loginUser = async (req, res) => {
     }
 
     const token = createToken(user._id);
-    res.json({ success: true, token, user: { name: user.name, email: user.email, id: user._id } });
+    res.json({ success: true, token, user: { name: user.name, email: user.email, id: user._id, contact: user.contact } });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "Error in Login" });
   }
 };
+
+
 
 // Register User
 const registerUser = async (req, res) => {
@@ -65,7 +67,11 @@ const registerUser = async (req, res) => {
     const user = await newUser.save();
     const token = createToken(user._id);
 
-    res.json({ success: true, token, user: { name: user.name, email: user.email, id: user._id } });
+    res.json({ 
+      success: true,
+      token,
+      user: { name: user.name, email: user.email, id: user._id }
+    });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "Error in Registration" });

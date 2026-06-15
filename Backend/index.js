@@ -32,6 +32,8 @@ app.use("/api/request", requestRouter)
 app.use("/api/user", userRouter)
 
 
+
+//Server
 app.get("/",(req, res) =>{
     res.send("hello world");
 })

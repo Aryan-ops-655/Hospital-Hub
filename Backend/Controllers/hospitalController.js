@@ -2,6 +2,7 @@ import hospitalModel from "../Models/hospitalModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import validator from "validator";
+import 'dotenv/config';
 
 // Create Token
 const createToken = (id) => {

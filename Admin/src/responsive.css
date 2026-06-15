@@ -7,16 +7,16 @@
 }
 
 :root {
-    --primary: #2c3e50;
+    --primary: #2276d0;
     --secondary: #667eea;
     --success: #27ae60;
     --warning: #f39c12;
     --danger: #e74c3c;
     --light: #ecf0f1;
-    --dark: #34495e;
+    --dark: #4d6680;
     --white: #ffffff;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow: 0 2px 8px rgba(202, 201, 201, 0.1);
+    --shadow-lg: 0 4px 16px rgba(156, 153, 153, 0.15);
 }
 
 html, body {
@@ -84,6 +84,7 @@ input, select, textarea {
     border-radius: 6px;
     font-size: 1rem;
     width: 100%;
+    color: #000000;
     transition: all 0.3s ease;
 }
 

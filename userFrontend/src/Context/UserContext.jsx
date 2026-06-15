@@ -162,28 +162,36 @@ const UserContextProvider = (props) => {
       return { success: false, message: "Please login to book appointments!" };
     }
     try {
-      const res = await fetch(`${BACKEND_URL}/api/request/add`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          hospitalId,
-          userId: user.id,
-          userName: user.name,
-          userContact: user.contact,
-          serviceType,
-          details,
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        fetchBookings(); // Refresh bookings list
-        return { success: true, message: data.message };
-      } else {
-        return { success: false, message: data.message };
-      }
-    } catch (error) {
-      return { success: false, message: "Booking submission failed" };
-    }
+  const res = await fetch(`${BACKEND_URL}/api/request/add`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      hospitalId,
+      userId: user.id,
+      userName: user.name,
+      userContact: user.contact,
+      serviceType,
+      details,
+    }),
+  });
+
+  const data = await res.json();
+
+  console.log("Response:", data);
+
+  return {
+    success: data.success,
+    message: data.message,
+  };
+} catch (error) {
+  console.error("Booking Error:", error);
+  return {
+    success: false,
+    message: error.message,
+  };
+}
   };
 
   const contextValue = {

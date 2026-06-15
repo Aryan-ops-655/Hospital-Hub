@@ -75,6 +75,8 @@
   width: 100%;
   padding: 12px 15px 12px 45px;
   border: 1px solid #ddd;
+  background-color: #ddddddf9;
+  color: #0f152300;
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.3s ease;
