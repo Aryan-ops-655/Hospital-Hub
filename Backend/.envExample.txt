@@ -1,3 +1,7 @@
+//check if your backend is running in this port or not//
 PORT = "4040"
+
+
 MONGODB_URI = ""
 JWT_SECRET = ""
+
