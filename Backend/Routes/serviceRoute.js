@@ -4,13 +4,21 @@ import {
     addBed, listBeds, updateBed, removeBed,
     addAmbulance, listAmbulances, updateAmbulance, removeAmbulance,
     addTest, listTests, updateTest, removeTest,
-    searchServices
+    searchServices,
+    listDoctor,
+    fetchDoctor,
+    updateDoctor
 } from "../Controllers/serviceController.js";
 
 const serviceRouter = express.Router();
 
 // Public Geolocation Search
 serviceRouter.get("/search", searchServices);
+
+//Doctors
+serviceRouter.get("/list-doc",listDoctor);
+serviceRouter.get("/fetch-doc",fetchDoctor);
+serviceRouter.post("/update-doctor",updateDoctor);
 
 // Beds
 serviceRouter.post("/add-bed", authMiddleware, addBed);

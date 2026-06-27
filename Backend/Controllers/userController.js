@@ -2,6 +2,7 @@ import userModel from "../Models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import validator from "validator";
+import 'dotenv/config';
 
 // Create Token
 const createToken = (id) => {
@@ -24,7 +25,7 @@ const loginUser = async (req, res) => {
       return res.json({ success: false, message: "Invalid credentials" });
     }
 
-    const token = createToken(user._id);
+    const token = createToken(user._id); 
     res.json({ success: true, token, user: { name: user.name, email: user.email, id: user._id, contact: user.contact } });
   } catch (error) {
     console.log(error);

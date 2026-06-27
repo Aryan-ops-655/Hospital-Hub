@@ -6,7 +6,7 @@ const requestSchema = new mongoose.Schema(
     userId: { type: String, required: true }, // For now, simple string if user registration isn't implemented
     userName: { type: String, required: true },
     userContact: { type: String, required: true },
-    serviceType: { type: String, required: true, enum: ["Bed", "Blood", "Test", "Ambulance"] },
+    serviceType: { type: String, required: true, enum: ["Bed", "Blood", "Test", "Ambulance", "Doctor Appointment"] },
     details: { type: Object, required: true }, // e.g., { bloodGroup: "A+", units: 2 } or { bedType: "ICU" }
     status: { type: String, default: "Pending", enum: ["Pending", "Accepted", "Rejected", "Completed"] },
     requestDate: { type: Date, default: Date.now },

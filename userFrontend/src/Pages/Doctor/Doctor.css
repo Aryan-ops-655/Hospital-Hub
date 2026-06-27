@@ -1,0 +1,138 @@
+.result-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px;
+    gap: 20px;
+}
+
+.doc-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    width: 450px;
+    height: 400px;
+    justify-content: start;
+    align-items:center;
+}
+
+
+.doc-profile{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(145, 145, 169);
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.doc-profile img{
+    height: 120%;
+}
+
+.doc-card-top{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: start;
+}
+
+.doc-profile-data{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.doc-card-btm{
+    width: 100%;
+    display: grid;
+}
+
+.doc-card-btns{
+    width: 100%;
+    padding: 15px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doc-btns{
+    font-weight: 600;
+    border: 2px solid black;
+    padding: 8px 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: 0.3s ease-in;
+}
+
+.app-btn{
+    color: white;
+    background: blue;
+    border: blue;
+}
+
+.app-btn:hover{
+    color: blue;
+    background-color: white;
+    border: 2px solid blue;
+}
+
+
+
+
+.appointment-modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.appointment-form-container{
+    background: white;
+    width: 500px;
+    max-width: 95%;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.appointment-form-container h2{
+    margin-bottom: 20px;
+}
+
+.appointment-form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.appointment-form-container input,
+.appointment-form-container select,
+.appointment-form-container textarea{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-buttons button{
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

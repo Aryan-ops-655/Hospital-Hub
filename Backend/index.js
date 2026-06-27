@@ -8,6 +8,7 @@ import hospitalRouter from './Routes/hospitalRoute.js';
 import serviceRouter from './Routes/serviceRoute.js';
 import requestRouter from './Routes/requestRoute.js';
 import userRouter from './Routes/userRoute.js';
+import doctorRouter from './Routes/doctorRoute.js';
 
 const port = process.env.PORT || 5000;
 
@@ -30,6 +31,7 @@ app.use("/api/hospital", hospitalRouter)
 app.use("/api/service", serviceRouter)
 app.use("/api/request", requestRouter)
 app.use("/api/user", userRouter)
+app.use("/api/doctor", doctorRouter)
 
 
 

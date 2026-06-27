@@ -1,0 +1,879 @@
+.doc-dashboard-cont{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.doctor-banner{
+    border-radius: 20px;
+    background-image: url("/banner.jpg");
+    background-size: cover;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.appointment-btn{
+    color: white;
+    background-color: rgb(0, 94, 255);
+    font-size: 15px;
+    font-weight: 600;
+    height: 40px;
+    width: 300px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.appointment-btn:hover{
+    background-color: white;
+    color: blue;
+    font-size: 16px;
+}
+
+.doc-status-title{
+    font-size:24px;
+    font-weight:700;
+    color:#1f2937;
+}
+
+.doc-status{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:25px;
+    align-items:start;
+}
+
+.doc-menu{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.doc-menu-card{
+    position:relative;
+    overflow:hidden;
+    height:130px;
+    border-radius:18px;
+    padding:22px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    cursor:pointer;
+    transition:.35s;
+    color:white;
+}
+
+.doc-menu-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.doc-menu-card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    right:-35px;
+    top:-35px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+}
+
+.doc-menu-card.blue{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+}
+
+.doc-menu-card.green{
+    background:linear-gradient(135deg,#10b981,#34d399);
+}
+
+.doc-menu-card.orange{
+    background:linear-gradient(135deg,#f59e0b,#fbbf24);
+}
+
+.doc-menu-card.purple{
+    background:linear-gradient(135deg,#7c3aed,#8b5cf6);
+}
+
+.doc-card-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(6px);
+}
+
+.doc-card-data{
+    display:flex;
+    flex-direction:column;
+}
+
+.doc-card-data h2{
+    margin:0;
+    font-size:34px;
+    font-weight:700;
+    color: rgba(23, 13, 65, 0.749);
+}
+
+.doc-card-data span{
+    margin-top:6px;
+    font-size:15px;
+    opacity:.95;
+}
+
+.doc-schedule-cont{
+    background:white;
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.doctor-schedule-card{
+    width:100%;
+}
+
+.schedule-header{
+    margin-bottom:20px;
+}
+
+.schedule-header h2{
+    margin:0;
+    color:#0d121a;
+}
+
+.schedule-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.schedule-table th{
+    background:#eff6ff;
+    color:#2563eb;
+    padding:14px;
+    text-align:left;
+}
+
+.schedule-table td{
+    padding:14px;
+    border-bottom:1px solid #edf2f7;
+}
+
+.schedule-table tbody tr:hover{
+    background:#f8fafc;
+}
+
+.no-data{
+    text-align:center;
+    color:#94a3b8;
+    padding:30px;
+}
+
+@media(max-width:1100px){
+
+.doc-status{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:700px){
+
+.doc-menu{
+    grid-template-columns:1fr;
+}
+
+}
+
+
+
+
+
+/* doctor settings */
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+
+.ds-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+
+  box-sizing: border-box;
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+.ds-loading-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ds-spinner {
+  width: 55px;
+  height: 55px;
+  border: 5px solid #e2e8f0;
+  border-top: 5px solid #2563eb;
+  border-radius: 50%;
+  animation: dsSpin 0.8s linear infinite;
+}
+
+@keyframes dsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.ds-header {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.ds-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ds-profile-preview img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ds-profile-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1e40af
+  );
+}
+
+.ds-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.ds-header p {
+  margin-top: 5px;
+  color: #64748b;
+}
+
+/* ===========================
+   STATUS BADGE
+=========================== */
+
+.ds-status-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ds-status-active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.ds-status-inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ===========================
+   SAVE BUTTON
+=========================== */
+
+.ds-save-btn {
+  border: none;
+  cursor: pointer;
+
+  padding: 14px 24px;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  transition: all 0.3s ease;
+}
+
+.ds-save-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   PROFILE COMPLETION
+=========================== */
+
+.ds-completion-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 25px;
+
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.ds-completion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.ds-progress-bar {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.ds-progress-fill {
+  height: 100%;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  transition: width 0.5s ease;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+.ds-section {
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  margin-bottom: 25px;
+
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.ds-section-header {
+  margin-bottom: 25px;
+}
+
+.ds-section-header h2 {
+  margin-bottom: 8px;
+}
+
+.ds-section-header p {
+  color: #64748b;
+}
+
+/* ===========================
+   GRID SYSTEM
+=========================== */
+
+.ds-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.ds-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ds-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ===========================
+   FORM FIELDS
+=========================== */
+
+.ds-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-field label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.ds-input,
+.ds-textarea,
+select {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+
+  outline: none;
+
+  transition: all 0.25s ease;
+}
+
+.ds-input:focus,
+.ds-textarea:focus,
+select:focus {
+  border-color: #2563eb;
+}
+
+.ds-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ===========================
+   SUB SECTION
+=========================== */
+
+.ds-subsection {
+  margin-top: 30px;
+}
+
+.ds-subsection h3 {
+  margin-bottom: 18px;
+}
+
+/* ===========================
+   CARD BLOCKS
+=========================== */
+
+.ds-card-block {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+
+  background: #fafafa;
+}
+
+.ds-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.ds-add-btn {
+  border: none;
+  cursor: pointer;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  color: white;
+  background: #2563eb;
+
+  font-weight: 600;
+}
+
+.ds-remove-btn {
+  border: none;
+  cursor: pointer;
+
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  color: white;
+  background: #ef4444;
+}
+
+/* ===========================
+   TOGGLE
+=========================== */
+
+.ds-toggle {
+  width: 70px;
+  height: 34px;
+
+  border-radius: 999px;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.ds-toggle-ball {
+  width: 26px;
+  height: 26px;
+
+  border-radius: 50%;
+  background: white;
+
+  position: absolute;
+  top: 4px;
+
+  transition: all 0.3s ease;
+}
+
+.ds-toggle-active {
+  background: #22c55e;
+}
+
+.ds-toggle-active .ds-toggle-ball {
+  left: 40px;
+}
+
+.ds-toggle-inactive {
+  background: #ef4444;
+}
+
+.ds-toggle-inactive .ds-toggle-ball {
+  left: 4px;
+}
+
+.ds-switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  margin-bottom: 12px;
+}
+
+/* ===========================
+   EMERGENCY CARDS
+=========================== */
+
+.ds-capability-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(240px, 1fr)
+  );
+  gap: 18px;
+}
+
+.ds-capability-card {
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.ds-capability-card:hover {
+  transform: translateY(-3px);
+}
+
+.ds-capability-active {
+  background: #f0fdf4;
+  border-color: #22c55e;
+}
+
+.ds-capability-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.ds-stat-card {
+  background: #fafafa;
+  padding: 24px;
+
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+
+  text-align: center;
+}
+
+.ds-stat-card h3 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.ds-readonly-grid {
+  margin-top: 25px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+/* ===========================
+   ACCOUNT SECTION
+=========================== */
+
+.ds-account-status-wrapper {
+  margin-bottom: 30px;
+}
+
+.ds-status-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.ds-status-option {
+  border: none;
+  cursor: pointer;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+.ds-status-selected {
+  color: white;
+}
+
+.ds-status-green {
+  background: #22c55e;
+}
+
+.ds-status-red {
+  background: #ef4444;
+}
+
+.ds-status-yellow {
+  background: #f59e0b;
+}
+
+.ds-license-card,
+.ds-summary-card {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  border: 1px solid #e2e8f0;
+  background: #fafafa;
+}
+
+/* ===========================
+   FOOTER SAVE
+=========================== */
+
+.ds-bottom-save {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1500px) {
+    .doc-menu{
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 992px) {
+  .ds-grid-2,
+  .ds-grid-3,
+  .ds-readonly-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .doc-menu{
+    grid-template-columns: 1fr;
+  }
+
+  .ds-header-left {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .ds-page {
+    padding: 15px;
+  }
+
+  .ds-section {
+    padding: 20px;
+  }
+
+  .ds-status-selector {
+    flex-direction: column;
+  }
+}
+
+
+
+.doc-schedule-cont{
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.doctor-schedule-card{
+    width:100%;
+    background:#fff;
+    border-radius:16px;
+    padding:0px 25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.schedule-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.schedule-header h2{
+    font-size:24px;
+    font-weight:600;
+    color:#1e293b;
+}
+
+.schedule-table-wrapper{
+    width:100%;
+    overflow-x:auto;
+}
+
+.schedule-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:450px;
+}
+
+.schedule-table thead{
+    background:#2563eb;
+    color:#fff;
+}
+
+.schedule-table th{
+    padding:15px;
+    text-align:center;
+    font-weight:600;
+    font-size:15px;
+}
+
+.schedule-table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+    font-size:15px;
+    color:#374151;
+}
+
+.schedule-table tbody tr:nth-child(even){
+    background:#f8fafc;
+}
+
+.schedule-table tbody tr:hover{
+    background:#eff6ff;
+    transition:.3s;
+}
+
+.no-data{
+    text-align:center;
+    padding:30px;
+    color:#6b7280;
+    font-style:italic;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .doctor-schedule-card{
+        padding:18px;
+    }
+
+    .schedule-header h2{
+        font-size:20px;
+    }
+
+    .schedule-table th,
+    .schedule-table td{
+        padding:12px;
+        font-size:14px;
+    }
+
+}

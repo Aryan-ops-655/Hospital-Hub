@@ -1,0 +1,153 @@
+.pt-page{
+    width:100%;
+    padding:30px;
+    min-height:100vh;
+}
+
+.pt-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.pt-header h1{
+    font-size:34px;
+    margin-bottom:5px;
+}
+
+.pt-header p{
+    color:#64748b;
+}
+
+.pt-search{
+    width:320px;
+    padding:13px 16px;
+    border:none;
+    border-radius:12px;
+    background:white;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    outline:none;
+}
+
+.pt-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.pt-stat-card{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.pt-stat-card h2{
+    color:#2563eb;
+    font-size:34px;
+}
+
+.pt-stat-card span{
+    color:#64748b;
+}
+
+.pt-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.pt-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.pt-card:hover{
+    transform:translateY(-3px);
+}
+
+.pt-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.pt-top h2{
+    margin-bottom:5px;
+}
+
+.pt-top p{
+    color:#64748b;
+}
+
+.pt-body{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.pt-body label{
+    font-weight:600;
+    color:#64748b;
+}
+
+.pt-body p{
+    margin-top:5px;
+    font-size:16px;
+}
+
+.pt-status{
+    padding:8px 18px;
+    border-radius:25px;
+    color:white;
+    font-weight:600;
+}
+
+.pt-status.pending{
+    background:#f59e0b;
+}
+
+.pt-status.accepted{
+    background:#22c55e;
+}
+
+.pt-status.rejected{
+    background:#ef4444;
+}
+
+.pt-empty{
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    text-align:center;
+    color:#64748b;
+}
+
+@media(max-width:900px){
+
+.pt-body{
+grid-template-columns:1fr;
+}
+
+.pt-header{
+flex-direction:column;
+align-items:flex-start;
+gap:20px;
+}
+
+.pt-search{
+width:100%;
+}
+
+.pt-stats{
+grid-template-columns:1fr;
+}
+
+}

@@ -13,7 +13,7 @@
 }
 
 .booking-list-item img{
-    width: 50px;
+    width: 80px;
 }
 
 .booking-list-item{
@@ -30,7 +30,10 @@
 }
 
 .items{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: center;
+    align-items: center;
     gap: 14px;
 }
 

@@ -18,6 +18,7 @@ const Bookings = () => {
       case 'Blood': return assets.blood_drop;
       case 'Ambulance': return assets.ambulance;
       case 'Test': return assets.doctor;
+      case 'Doctor Appointment': return assets.doctor;
       default: return assets.hospital_building;
     }
   };

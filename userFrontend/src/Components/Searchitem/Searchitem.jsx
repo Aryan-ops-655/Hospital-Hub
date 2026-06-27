@@ -48,7 +48,7 @@ const Searchitem = () => {
 
     // Pack booking details dynamically matching serviceType schema
     let requestDetails = {};
-    if (selectedItem.serviceType === "Bed") {
+    if (selectedItem.serviceType === "bed") {
       requestDetails = {
         bedType: selectedItem.type,
         requestedUnits: Number(bookingFormData.bookingUnits),

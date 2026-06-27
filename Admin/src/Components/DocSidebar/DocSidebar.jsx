@@ -2,35 +2,38 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
-  Database,
-  Droplet,
   Activity,
-  Truck,
   ClipboardList,
   Settings,
   LogOut,
+  SearchSlashIcon,
+  Table,
 } from "lucide-react";
-import "./Sidebar.css";
+import "../Sidebar/sidebar.css";
 
-const Sidebar = () => {
+const DocSidebar = () => {
   const logout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("hospital");
     localStorage.removeItem("doctor");
     window.location.href = "/enter";
   };
 
+  
+  const doctor = JSON.parse(localStorage.getItem('doctor') || '{}');
+
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h2 className="logo">
-          HMS<span>Hub</span>
+        <img src="/H-logo.png" alt="" style={{height: "40px", borderRadius: "45%"}} />
+        <h2 className="logo" style={{display:"grid"}}>
+            {doctor?.name ||"Guest"}<span style={{fontSize:"15px", color:"white"}}>{doctor?.email ||"email"}</span>
         </h2>
       </div>
 
       <nav className="sidebar-nav">
         <NavLink
-          to="/"
+          to="/doctor"
           className={({ isActive }) =>
             isActive ? "nav-item active" : "nav-item"
           }
@@ -40,55 +43,45 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/beds"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <Database size={20} />
-          <span>Manage Beds</span>
-        </NavLink>
-
-        <NavLink
-          to="/blood"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <Droplet size={20} />
-          <span>Blood Bank</span>
-        </NavLink>
-
-        <NavLink
-          to="/tests"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <Activity size={20} />
-          <span>Lab Tests</span>
-        </NavLink>
-
-        <NavLink
-          to="/ambulances"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <Truck size={20} />
-          <span>Ambulances</span>
-        </NavLink>
-
-        <NavLink
-          to="/requests"
+          to="/appointments"
           className={({ isActive }) =>
             isActive ? "nav-item active" : "nav-item"
           }
         >
           <ClipboardList size={20} />
-          <span>Requests</span>
+          <span>My Appointment</span>
         </NavLink>
-      </nav>
+
+        <NavLink
+          to="/not-avilable"
+          className={({ isActive }) =>
+            isActive ? "nav-item active" : "nav-item"
+          }
+        >
+          <Table size={20} />
+          <span>My Sessions</span>
+        </NavLink>
+
+        <NavLink
+          to="/patients"
+          className={({ isActive }) =>
+            isActive ? "nav-item active" : "nav-item"
+          }
+        >
+          <Activity size={20} />
+          <span>My Patients</span>
+        </NavLink>
+
+        <NavLink
+          to="/doc-settings"
+          className={({ isActive }) =>
+            isActive ? "nav-item active" : "nav-item"
+          }
+        >
+          <Settings size={20} />
+          <span>Settings</span>
+        </NavLink>
+    </nav>
 
       <div className="sidebar-footer">
         <div className="nav-item logout" onClick={logout}>
@@ -100,4 +93,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default DocSidebar;

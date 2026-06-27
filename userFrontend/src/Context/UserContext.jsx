@@ -18,6 +18,7 @@ const UserContextProvider = (props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchType, setSearchType] = useState("all");
   const [loading, setLoading] = useState(false);
+  const [docList, setDocList] = useState([]);
 
   // Auto-detect user coordinates on load
   const detectUserLocation = () => {
@@ -147,10 +148,25 @@ const UserContextProvider = (props) => {
     }
   };
 
+  //fetch doctor-list
+  const fetchDoctors = async() => {
+    if(!user) return;
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/service/list-doc`);
+      const resData = await res.json();
+      if(resData.success){
+        setDocList(resData.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   // Trigger bookings load when user logs in
   useEffect(() => {
     if (user) {
       fetchBookings();
+      fetchDoctors();
     } else {
       setUserBookings([]);
     }
@@ -179,7 +195,6 @@ const UserContextProvider = (props) => {
 
   const data = await res.json();
 
-  console.log("Response:", data);
 
   return {
     success: data.success,
@@ -213,6 +228,7 @@ const UserContextProvider = (props) => {
     logout,
     fetchBookings,
     createBooking,
+    docList,
   };
 
   return (
