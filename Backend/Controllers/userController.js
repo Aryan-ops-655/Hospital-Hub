@@ -71,7 +71,7 @@ const registerUser = async (req, res) => {
     res.json({ 
       success: true,
       token,
-      user: { name: user.name, email: user.email, id: user._id }
+      user: { name: user.name, email: user.email, id: user._id, contact: user.contact }
     });
   } catch (error) {
     console.log(error);

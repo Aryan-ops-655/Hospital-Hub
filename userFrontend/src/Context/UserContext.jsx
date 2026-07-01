@@ -173,6 +173,7 @@ const UserContextProvider = (props) => {
   }, [user]);
 
   // Submit Booking Request
+
   const createBooking = async (hospitalId, serviceType, details) => {
     if (!user) {
       return { success: false, message: "Please login to book appointments!" };

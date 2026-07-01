@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       <div className="main-content">
         <header className="top-header">
           <div className="header-info">
-            <h1>Welcome, {type=="doctor"?doctor.name||"Guest":hospital.name || 'Hospital Admin'}</h1>
+            <h1>Welcome, {type=="doctor"?doctor.fullName||"Guest":hospital.name || 'Hospital Admin'}</h1>
             <p>Managing your healthcare services made simple.</p>
           </div>
           <div className="user-profile">

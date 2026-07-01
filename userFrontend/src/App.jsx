@@ -11,6 +11,7 @@ import Doctor from './Pages/Doctor/Doctor.jsx'
 import Tests from './Pages/Tests/Tsets.jsx'
 import Hospitals from './Pages/Hospitals/Hospitals.jsx'
 import Ambulance from './Pages/Ambulance/Ambulance.jsx'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <ToastContainer position="top-right" autoClose={3000} theme="colored" />
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/bloods' element={<Blood/>} />

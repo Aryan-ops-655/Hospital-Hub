@@ -1,259 +1,1022 @@
 .management-page {
-    animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .page-header h2 {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #0f172a;
-    font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0f172a;
+  font-size: 24px;
 }
 
 .title-icon {
-    color: #3b82f6;
+  color: #3b82f6;
 }
 
 .add-btn {
-    background-color: #3b82f6;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .add-btn:hover {
-    background-color: #2563eb;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  background-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .refresh-btn {
-    color: #3b82f6;
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: underline;
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .stat-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .stat-card h3 {
-    font-size: 14px;
-    color: #6c757d;
-    margin-bottom: 10px;
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
 }
 
 .stat-value {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1a1a2e;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
 }
 
 .table-container {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    overflow: hidden;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
 }
 
 .data-table th {
-    background-color: #f8f9fa;
-    padding: 15px 20px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #6c757d;
-    text-transform: uppercase;
-    border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6c757d;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
 }
 
 .data-table td {
-    padding: 15px 20px;
-    border-bottom: 1px solid #f8f9f9;
-    font-size: 14px;
-    color: #444;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f8f9f9;
+  font-size: 14px;
+  color: #444;
 }
 
 .data-table tr:hover {
-    background-color: #fffcfd;
+  background-color: #fffcfd;
 }
 
 .status-badge {
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: capitalize;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
-.status-badge.available { background-color: #e8f5e9; color: #2e7d32; }
-.status-badge.full, .status-badge.busy { background-color: #ffebee; color: #c62828; }
-.status-badge.pending { background-color: #fff3e0; color: #ef6c00; }
-.status-badge.accepted { background-color: #e3f2fd; color: #1565c0; }
-.status-badge.rejected { background-color: #fafafa; color: #616161; }
+.status-badge.available {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+.status-badge.full,
+.status-badge.busy {
+  background-color: #ffebee;
+  color: #c62828;
+}
+.status-badge.pending {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+.status-badge.accepted {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+.status-badge.rejected {
+  background-color: #fafafa;
+  color: #616161;
+}
 
 .actions-cell {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .actions-cell button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.edit-icon { color: #0f172a; }
-.delete-icon { color: #ff4d4d; }
-.accept-icon { color: #2e7d32; }
-.reject-icon { color: #c62828; }
+.edit-icon {
+  color: #0f172a;
+}
+.delete-icon {
+  color: #ff4d4d;
+}
+.accept-icon {
+  color: #2e7d32;
+}
+.reject-icon {
+  color: #c62828;
+}
 
-.actions-cell button:hover { transform: scale(1.2); }
+.actions-cell button:hover {
+  transform: scale(1.2);
+}
 
 /* --- Modal Styles --- */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
 }
 
 .modal-content {
-    background-color: #fff;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-    padding: 30px;
-    position: relative;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 .modal-header h3 {
-    font-size: 20px;
-    color: #1a1a2e;
+  font-size: 20px;
+  color: #1a1a2e;
 }
 
 .close-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #6c757d;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6c757d;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 8px;
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
 }
 
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #444;
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #444;
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .checkbox-group label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .checkbox-group input {
-    width: auto;
+  width: auto;
 }
 
 .submit-btn {
-    width: 100%;
-    background-color: #3b82f6;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 10px;
+  width: 100%;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.user-info p { margin: 0; }
-.user-info .name { font-weight: 700; color: #1a1a2e; }
-.user-info .contact { font-size: 12px; color: #6c757d; }
+.user-info p {
+  margin: 0;
+}
+.user-info .name {
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.user-info .contact {
+  font-size: 12px;
+  color: #6c757d;
+}
 
 .service-type {
-    background-color: #f0f2f5;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 12px;
+  background-color: #f0f2f5;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .req-details p {
-    margin: 2px 0;
-    font-size: 12px;
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+/* =====================================================
+   MANAGE REQUESTS PAGE
+   PART 1 - Layout, Header, Dashboard & Search
+===================================================== */
+
+.management-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fb;
+  box-sizing: border-box;
+}
+
+/* ================= HEADER ================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.page-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1e3a8a;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-header p {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.title-icon {
+  color: #2563eb;
+}
+
+/* ================= REFRESH BUTTON ================= */
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.25);
+}
+
+/* ================= DASHBOARD ================= */
+
+.request-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+/* Dashboard Card */
+
+.dashboard-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 28px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card svg {
+  width: 55px;
+  height: 55px;
+  padding: 12px;
+  border-radius: 14px;
+}
+
+/* Card Text */
+
+.dashboard-card h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.dashboard-card span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Card Colors */
+
+.dashboard-card.total svg {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.dashboard-card.pending svg {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.dashboard-card.accepted svg {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.dashboard-card.rejected svg {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ================= SEARCH ================= */
+
+.search-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  margin-bottom: 28px;
+}
+
+.search-container svg {
+  color: #64748b;
+}
+
+.search-container input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+}
+
+.search-container input::placeholder {
+  color: #94a3b8;
+}
+
+/* =====================================================
+   MANAGE REQUESTS PAGE
+   PART 2 - Table, Patient Card & Details
+===================================================== */
+
+/* ================= TABLE ================= */
+
+.table-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead {
+  background: #2563eb;
+  color: #fff;
+}
+
+.data-table thead th {
+  padding: 18px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.data-table tbody tr {
+  transition: 0.25s;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.data-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.data-table td {
+  padding: 18px;
+  vertical-align: top;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* ================= PATIENT ================= */
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 220px;
+}
+
+.patient-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.patient-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.patient-details h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.patient-details span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ================= SERVICE BADGE ================= */
+
+.service-pill {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: #dbeafe;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ================= DETAILS CARD ================= */
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.detail-item {
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border-left: 4px solid #2563eb;
+}
+
+.detail-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #1e3a8a;
+  font-size: 13px;
+}
+
+.detail-item span {
+  color: #475569;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.no-details {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ================= DATE ================= */
+
+.date-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ================= ROW HOVER ================= */
+
+.request-row {
+  transition: all 0.25s ease;
+}
+
+.request-row:hover {
+  transform: scale(1.005);
+  box-shadow: inset 4px 0 0 #2563eb;
+}
+
+/* =====================================================
+   MANAGE REQUESTS PAGE
+   PART 3 - Status, Buttons & Empty State
+===================================================== */
+
+/* ================= STATUS BADGES ================= */
+
+.status-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 100px;
+
+  padding: 8px 18px;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  text-transform: capitalize;
+}
+
+/* Pending */
+
+.status-badge.pending {
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #fdba74;
+}
+
+/* Accepted */
+
+.status-badge.accepted {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+/* Rejected */
+
+.status-badge.rejected {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+/* Completed */
+
+.status-badge.completed {
+  background: #dbeafe;
+  color: #2563eb;
+  border: 1px solid #93c5fd;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 9px 15px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+/* Accept */
+
+.accept-btn {
+  background: #16a34a;
+  color: #fff;
+}
+
+.accept-btn:hover {
+  background: #15803d;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(22, 163, 74, 0.28);
+}
+
+/* Reject */
+
+.reject-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.reject-btn:hover {
+  background: #dc2626;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(239, 68, 68, 0.28);
+}
+
+/* Delete */
+
+.delete-btn {
+  background: #f1f5f9;
+
+  color: #475569;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.25);
+}
+
+/* ================= EMPTY STATE ================= */
+
+.empty-state {
+  padding: 70px 20px !important;
+}
+
+.empty-box {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 18px;
+
+  color: #94a3b8;
+}
+
+.empty-box svg {
+  width: 70px;
+
+  height: 70px;
+
+  color: #cbd5e1;
+}
+
+.empty-box h3 {
+  margin: 0;
+
+  color: #334155;
+
+  font-size: 22px;
+}
+
+.empty-box p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  text-align: center;
+
+  max-width: 350px;
+}
+
+/* ================= TABLE SCROLL ================= */
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 20px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+/* =====================================================
+   MANAGE REQUESTS PAGE
+   PART 4 - Responsive Design & Finishing Touches
+===================================================== */
+
+/* ================= TABLE HEADER ================= */
+
+.data-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+/* ================= SMOOTH TRANSITIONS ================= */
+
+* {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ================= ROW ANIMATION ================= */
+
+.request-row {
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= DASHBOARD CARD ANIMATION ================= */
+
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transition: 0.6s;
+}
+
+.dashboard-card:hover::before {
+  left: 100%;
+}
+
+/* ================= BUTTON ACTIVE ================= */
+
+.accept-btn:active,
+.reject-btn:active,
+.delete-btn:active,
+.refresh-btn:active {
+  transform: scale(0.96);
+}
+
+/* ================= SEARCH FOCUS ================= */
+
+.search-container:focus-within {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/* ================= TABLE STRIPES ================= */
+
+.data-table tbody tr:nth-child(even) {
+  background: #fcfdff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .request-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .management-page {
+    padding: 20px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .page-header h2 {
+    font-size: 26px;
+  }
+
+  .search-container {
+    margin-top: 10px;
+  }
+
+  .dashboard-card {
+    padding: 18px;
+  }
+
+  .dashboard-card h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .request-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .data-table {
+    min-width: 900px;
+  }
+
+  .patient-info {
+    min-width: 200px;
+  }
+
+  .details-card {
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 500px) {
+  .management-page {
+    padding: 15px;
+  }
+
+  .page-header h2 {
+    font-size: 22px;
+  }
+
+  .refresh-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-container {
+    padding: 12px 15px;
+  }
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bfc9d9;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
 }

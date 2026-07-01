@@ -27,7 +27,7 @@ const DocSidebar = () => {
       <div className="sidebar-header">
         <img src="/H-logo.png" alt="" style={{height: "40px", borderRadius: "45%"}} />
         <h2 className="logo" style={{display:"grid"}}>
-            {doctor?.name ||"Guest"}<span style={{fontSize:"15px", color:"white"}}>{doctor?.email ||"email"}</span>
+            {doctor?.fullName ||"Guest"}<span style={{fontSize:"15px", color:"white"}}>{doctor?.email ||"email"}</span>
         </h2>
       </div>
 
